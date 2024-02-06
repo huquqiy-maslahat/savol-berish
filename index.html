@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Contact Us Form  | CodingLab </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="left-side">
+        <div class="address details">
+          <i class="fab fa-telegram-plane"></i>
+          <div class="topic">Telegram</div>
+          <div class="text-one">telegram</div>
+          <div class="text-two">telegram</div>
+        </div>
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Telefon</div>
+          <div class="text-one">+998 90 000 00 00</div>
+          <div class="text-two">+998 90 000 00 00</div>
+        </div>
+        <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">email@gmail.com</div>
+          <div class="text-two">email@gmail.com</div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="topic-text">SAVOL BERISH</div>
+        <p></p>
+      <form action="#">
+        <div class="input-box">
+          <textarea  type="text" id="aloqa" placeholder="Savolingizni shu yerga kiriting..."></textarea>
+        </div>
+        <div class="input-box message-box">
+          <a id="ssilka" href="savol-berish-kir/index.html">текст ссылки</a>
+        </div>
+        <div class="button">
+          <input type="button" id="yuborish" value="Yuborish" >
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script>
+    let tg = window.Telegram.WebApp;
+    let buy = document.getElementById("yuborish");
+
+    buy.addEventListener("click", ()=> {
+      document.getElementById("ssilka").style.display = "none";
+      document.getElementById("aloqa").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
+    })
+  </script>
+</body>
+</html>
